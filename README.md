@@ -2,7 +2,9 @@ Install
 =======
 
 Import database.sql 
+
 Setup app/Config/database.php
+
 Change values for security salts
 
 
