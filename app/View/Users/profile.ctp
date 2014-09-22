@@ -14,7 +14,7 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <?php echo $this->Form->create('Profile' , array('role' => 'form')); echo $this->Form->input('id', array('value' => $user['Profile']['id'])); ?>
+                    <?php echo $this->Form->create('User.Profile' , array('role' => 'form')); echo $this->Form->input('id', array('value' => $user['Profile']['id'])); ?>
                     <?php if(isset($user['Profile']['thumbnail_picture']) && !empty($user['Profile']['thumbnail_picture'])): ?>
                         <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo $user['Profile']['thumbnail_picture']; ?>" class="img-circle"> </div>
                     <?php else: ?>
@@ -45,7 +45,7 @@
 
                                 <tr>
                                     <th>About Me</th>
-                                    <td class="profile-view"><p>
+                                    <td class="profile-view text-justify"><p>
                                         <?php
                                         if(isset($user['Profile']['bio'])) {
                                             echo $user['Profile']['bio'];

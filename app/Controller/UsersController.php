@@ -262,12 +262,13 @@ class UsersController extends AppController {
     }
 
     public function profile() {
+        if ($this->request->is(array('post', 'put'))) {
+            $this->loadModel('Profile');
+            //debug($this->request->data);
+            $this->Profile->save($this->request->data);
+        }
         $user = $this->User->find('first', array('conditions' => array('User.id' => $this->Auth->user('id'))));
         $this->set('user', $user);
-        if ($this->request->is('post')) {
-            $this->loadModel('Profile');
-            //$this->Profile->save($this->request->data);
-        }
     }
 
 /**
