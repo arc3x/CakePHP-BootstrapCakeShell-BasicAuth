@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 22, 2014 at 07:07 AM
+-- Generation Time: Jun 24, 2015 at 11:53 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -68,6 +68,15 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `value`, `created`, `modified`) VALUES
+(1, 'Company Name', 'Theta Designs', '2014-09-07 01:02:08', '2014-09-07 01:02:08'),
+(2, 'Company Email (Send [can be fake])', 'noreply@thetadesigns.com', '2014-09-07 01:02:51', '2014-09-11 19:44:01'),
+(3, 'Company Email (Recieve)', 'you@yours.com', '2014-09-07 15:21:07', '2014-09-07 15:22:47');
 
 -- --------------------------------------------------------
 
