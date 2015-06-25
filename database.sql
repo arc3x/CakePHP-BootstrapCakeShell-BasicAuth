@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 24, 2015 at 11:53 PM
+-- Generation Time: Jun 25, 2015 at 12:12 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `cake_starting_point`
+-- Database: `clientportal`
 --
-CREATE DATABASE IF NOT EXISTS `cake_starting_point` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cake_starting_point`;
+CREATE DATABASE IF NOT EXISTS `clientportal` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `clientportal`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +38,17 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`id`, `user_id`, `full_name`, `picture`, `thumbnail_picture`, `bio`, `created`, `modified`) VALUES
+(2, 11, '', '', '', '', '2015-06-24 23:38:52', '2015-06-24 23:38:52'),
+(3, 12, '', '', '', '', '2015-06-25 00:02:41', '2015-06-25 00:02:41'),
+(4, 13, '', '', '', '', '2015-06-25 00:03:13', '2015-06-25 00:03:13'),
+(5, 14, '', '', '', '', '2015-06-25 00:07:09', '2015-06-25 00:07:09');
 
 -- --------------------------------------------------------
 
@@ -76,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 INSERT INTO `settings` (`id`, `name`, `value`, `created`, `modified`) VALUES
 (1, 'Company Name', 'Theta Designs', '2014-09-07 01:02:08', '2014-09-07 01:02:08'),
 (2, 'Company Email (Send [can be fake])', 'noreply@thetadesigns.com', '2014-09-07 01:02:51', '2014-09-11 19:44:01'),
-(3, 'Company Email (Recieve)', 'you@yours.com', '2014-09-07 15:21:07', '2014-09-07 15:22:47');
+(3, 'Company Email (Recieve)', 'arco000@gmail.com', '2014-09-07 15:21:07', '2014-09-07 15:22:47');
 
 -- --------------------------------------------------------
 
@@ -93,7 +103,16 @@ CREATE TABLE IF NOT EXISTS `tokens` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `tokens`
+--
+
+INSERT INTO `tokens` (`id`, `userid`, `type`, `role`, `token`, `created`, `modified`) VALUES
+(1, 11, 'account', '1', '0adccc3058e0fdd6ea19ef82aa963fe5', '2015-06-24 23:38:52', '2015-06-24 23:38:52'),
+(2, 12, 'account', '1', 'b02613e6e34638ddfba2bd4bd56c7272', '2015-06-25 00:02:41', '2015-06-25 00:02:41'),
+(4, 14, 'account', '1', 'df1de734cf7c76942d80b4d3d5ff01cd', '2015-06-25 00:07:09', '2015-06-25 00:07:09');
 
 -- --------------------------------------------------------
 
@@ -111,7 +130,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `active`, `role_id`, `username`, `password`, `email`, `created`, `modified`) VALUES
+(1, 1, 3, 'tester', '$2a$10$g45WpibRUXtpEV9mVKLQeO17qerMVCmHENX20aE2CpASZxFr7q6/y', 'test@test.com', '2015-06-25 00:07:09', '2015-06-25 00:07:09');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

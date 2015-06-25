@@ -7,6 +7,11 @@ Setup app/Config/database.php
 
 Change values for security salts
 
+A default webmaster account exists. 
+User: test@test.com
+Pass: test
+Note: A change of the security salts will break login.
+
 
 CakePHP
 =======
